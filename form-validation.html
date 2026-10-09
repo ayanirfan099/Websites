@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Validation</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI';
+      background: #fff3e0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 60px 16px 24px;
+      margin: 0;
+    }
+    form {
+      max-width: 440px;
+      width: 100%;
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    input {
+      margin: 0.5rem 0;
+      padding: 0.7rem;
+      width: 100%;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      margin-top: 1rem;
+      padding: 0.7rem 1.5rem;
+      font-size: 1rem;
+      background-color: #ff9800;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <a href="index.html" style="position:fixed;top:12px;left:12px;z-index:10;background:white;color:#234;padding:8px;border-radius:6px">All projects</a>
+  <form id="registrationForm">
+    <h2>Registration Form Demo</h2>
+    <p>Practice validation only. No account is created or data stored.</p>
+    <label for="email">Email</label>
+    <input id="email" type="email" placeholder="Email" autocomplete="email" required>
+    <label for="password">Demo password (at least 6 characters)</label>
+    <input id="password" type="password" placeholder="Use a made-up example" minlength="6" required>
+    <button type="submit">Validate</button>
+    <p id="status" role="status" aria-live="polite"></p>
+  </form>
+  <script>
+    const form = document.getElementById('registrationForm');
+    const status = document.getElementById('status');
+    function validateForm() {
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value;
+      if (!email || !password) {
+        status.textContent = 'Please fill out all fields.';
+        return false;
+      }
+      if (!document.getElementById('email').checkValidity()) {
+        status.textContent = 'Please enter a valid email address.';
+        return false;
+      }
+      if (password.length < 6) {
+        status.textContent = 'The demo password must have at least 6 characters.';
+        return false;
+      }
+      status.textContent = 'Validation passed. This demo does not create an account.';
+      return true;
+    }
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      validateForm();
+    });
+  </script>
+</body>
+</html>

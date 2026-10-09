@@ -82,6 +82,7 @@
     </style>
 </head>
 <body>
+  <a href="index.html" style="position:fixed;top:12px;left:12px;z-index:10;background:white;color:#234;padding:8px;border-radius:6px">All projects</a>
 
     <header>
         <h1>🎓 XYZ University - BS Computer Science</h1>
@@ -178,7 +179,7 @@
                     sem.courses.forEach(course => {
                         let courseDiv = document.createElement("div");
                         courseDiv.className = "course";
-                        courseDiv.innerHTML = `<strong>${course.name}</strong> (${course.credits} Credit Hours)  
+                        courseDiv.innerHTML = `<strong>${course.name}</strong> (${course.credits} Credit Hours)
                         <p>👨‍🏫 ${course.professor} | 💰 Fee: $${course.fee}</p>`;
                         courseList.appendChild(courseDiv);
                     });
@@ -194,12 +195,17 @@
             }
         </script>
 
-        <script>generateSemesters();</script>
+        <script>
+            generateSemesters();
+            document.addEventListener("DOMContentLoaded", function () {
+                document.getElementById("year").textContent = new Date().getFullYear();
+            });
+        </script>
 
     </div>
 
     <footer>
-        <p>&copy; 2025 XYZ University | BSCS Program</p>
+        <p>&copy; <span id="year"></span> XYZ University | BSCS Program</p>
     </footer>
 
 </body>

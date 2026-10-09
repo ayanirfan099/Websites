@@ -1,42 +1,35 @@
-# 🗂️ Random HTML Projects
+# Web Development Practice
 
-This repository contains a collection of basic HTML projects and mini-experiments I created during my Computer Science degree. These projects were done to practice web development fundamentals like HTML, CSS, and a little bit of JavaScript.
+Small HTML, CSS and JavaScript learning projects. No framework, package installation or build step is needed.
 
-## 📁 Project Structure
+## Run
 
-Each folder in this repo represents a standalone project. Some are simple HTML pages, while others include CSS and JavaScript to enhance styling and interactivity.
+Open `index.html` in your browser, or serve the folder locally:
 
-Example projects might include:
-- `portfolio-site/` – A simple personal portfolio template
-- `calculator/` – A basic calculator using HTML, CSS & JavaScript
-- `form-validation/` – A form with basic validation features
-- `responsive-layout/` – A layout demo using media queries
-- `color-picker/` – A basic tool to pick and apply background colors
+```sh
+python3 -m http.server 8000
+```
 
-> Feel free to explore each folder to see the code and run the pages in your browser!
+Visit http://localhost:8000. The projects work without a backend.
 
-## 🛠️ Technologies Used
+| Page | Purpose |
+| --- | --- |
+| [Portfolio](portfolio.html) | Personal introduction and project list |
+| [Calculator](calculator.html) | Addition with finite-number validation |
+| [Form validation](form-validation.html) | Validate demo fields; no registration or storage |
+| [Responsive layout](responsive-layout.html) | Flexible card layout |
+| [Color picker](color-picker.html) | Change the background color |
+| [University program](university-program.html) | Fictional course information and expandable semesters |
 
-- HTML5
-- CSS3
-- JavaScript (Basic usage in some projects)
-- No frameworks or libraries were used unless specified in the individual folders.
+The earlier combined layout/color-picker file is now two valid HTML documents. Source files have descriptive `.html` names, mobile viewport metadata and navigation back to the project index. Old filenames remain available in Git history; update any bookmarks to the new paths.
 
-## 📚 Purpose
+## Checks
 
-These projects were primarily built for:
-- Learning and reinforcing web development concepts
-- Completing university assignments
-- Personal experimentation and fun
+Requires Python 3 and Node.js for these development checks, not for viewing the pages:
 
-## 📌 Note
+```sh
+python3 -m unittest discover -s tests -v
+node tests/interactions.test.js
+```
 
-This repo was created to compile all the projects I did that helped me better understand HTML, CSS and JS coding. They are in no way or shape final projects.
-
-## 📬 Contact
-
-If you're interested in any of the projects or have questions, feel free to open an issue or reach out!
-
----
-
-**Thank you for visiting!**
+These checks cover HTML document structure, local links, calculator input and form behavior. They are not a replacement for checking visual appearance and accessibility in a browser.

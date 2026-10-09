@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Layout</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI';
+      background-color: #e0f7fa;
+    }
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding: 2rem;
+      justify-content: center;
+    }
+    .box {
+      flex: 1 1 250px;
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      text-align: center;
+      font-weight: bold;
+    }
+    h1 {
+      text-align: center;
+      padding-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <a href="index.html" style="position:fixed;top:12px;left:12px;z-index:10;background:white;color:#234;padding:8px;border-radius:6px">All projects</a>
+  <h1>Responsive Layout Demo</h1>
+  <div class="container">
+    <div class="box">Box 1</div>
+    <div class="box">Box 2</div>
+    <div class="box">Box 3</div>
+    <div class="box">Box 4</div>
+  </div>
+</body>
+</html>
