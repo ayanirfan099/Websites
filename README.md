@@ -2,6 +2,10 @@
 
 Small HTML, CSS and JavaScript learning projects. No framework, package installation or build step is needed.
 
+[![Checks](https://github.com/ayanirfan099/Websites/actions/workflows/ci.yml/badge.svg)](https://github.com/ayanirfan099/Websites/actions/workflows/ci.yml)
+
+The existing `index.html` provides a visual entry point to the examples. CI runs the existing structure and interaction checks. No Pages deployment or publishing change is included.
+
 ## Run
 
 Open `index.html` in your browser, or serve the folder locally:
