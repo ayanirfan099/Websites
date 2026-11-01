@@ -1,4 +1,4 @@
-# Web Development Practice
+# Frontend Practice Labs
 
 Small HTML, CSS and JavaScript learning projects. No framework, package installation or build step is needed.
 
